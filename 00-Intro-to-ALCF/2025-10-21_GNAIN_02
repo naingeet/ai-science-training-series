@@ -1,5 +1,16 @@
-#1. Try different combinations of model sizes (layer count with --n-layers=?) and tp-degrees (--tp=?) to get an idea of what works
--done
+Homework 02
+Question- Try different combinations of model sizes (layer count with --n-layers=?) and tp-degrees (--tp=?) to get an idea of what works.  Document how the performance changes with 8-layer model and TP of 1,2,4 (--n-layhers=8 --tp=?)
 
-#2. Document how the performance changes with 8-layer model and TP of 1,2,4 (--n-layhers=8 --tp=?)
--done
+Answer-
+1. Performance of different layers over same tp (4):
+With same TP (4) and different layers (32 vs 8)-  32 layer model took longer time (8 mins) compared to 8 layer model (120 mins). 
+and After 60 iterations, training loss was reducing in complex model where it kept increasing till 140 iterations in layer 8 model. 
+[ezpz-launch python3 -m ezpz.examples.fsdp_tp --dataset random --tp=4]-  32  default layer model
+[ezpz-launch python3 -m ezpz.examples.fsdp_tp --dataset random --n-layers=8]- 8 layer model
+
+
+2. Performance of same layers (8) but with different tp (4):
+- With 4 tp, took least time (109.94 sec)
+- With 3 tp- did not run properly,  error within 11 sec-  [rank2]: AssertionError: 4 is not divisible by 3)
+- With 2 tp, took least time (120.80 sec)
+- With 1 tp, Took more time (123.53 sec)
