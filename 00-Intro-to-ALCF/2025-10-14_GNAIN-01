@@ -1,9 +1,19 @@
 Homework 1
 
-#Make sure that the single GPU code runs on Polaris- Yes! its working!
+#Make sure that the single GPU code runs on Polaris- 
+-Yes! its working!
 
 #The counting of ranks, does not necessarily has to be a mix-and-match between mpi4py and PALS. Try to implement the rank counting method using just PALS or mpi4py. device_count() methods can be useful here.
 -done implementaion of rank counting using mpi4py
+from mpi4py import MPI
+
+def get_local_rank():
+    comm = MPI.COMM_WORLD
+    local_comm = comm.Split_type(MPI.COMM_TYPE_SHARED)
+    return local_comm.Get_rank()
+
+LOCAL_RANK = get_local_rank()
+
 
 #Play with different dimensions of the src and tgt tensors.
 -done!
