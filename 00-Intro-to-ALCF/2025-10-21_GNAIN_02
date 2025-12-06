@@ -1,1 +1,5 @@
-homwwork 2
+#1. Try different combinations of model sizes (layer count with --n-layers=?) and tp-degrees (--tp=?) to get an idea of what works
+-done
+
+#2. Document how the performance changes with 8-layer model and TP of 1,2,4 (--n-layhers=8 --tp=?)
+-done
