@@ -1,1 +1,12 @@
+#Implement your own multi-agent with your own tools and demonstrate with ALCF endpoints.
 
+Submiting two or optionally three files:
+
+gnain_tools.py
+gnain_multi_agent.py
+Optionally: requirements.txt
+
+#Requirements
+#Make sure you make use of ALCF endpoints
+#Your code must run with python gnain_multi_agent.py
+#Any additional dependency required should be listed in requirements.txt and must be installable by pip
